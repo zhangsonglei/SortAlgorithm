@@ -18,23 +18,23 @@ public class CountSort {
 		if(1 == arr.length)
 			return;
 		
-		int min = Integer.MAX_VALUE;
 		int max = Integer.MIN_VALUE;
-		for(int i = 0; i < arr.length; i++) {
-			min = Math.min(min, arr[i]);
+		for(int i = 0; i < arr.length; i++) 
 			max = Math.max(max, arr[i]);
-		}
 		
-		int[] help = new int[max];
+		int[] help = new int[max + 1];
+		for(int i = 0; i < arr.length; i++)
+			help[arr[i]]++;
+		
+		for(int i = 0; i < help.length - 1; i++)//第i个位置保存着array中，值小于或等于i的元素的总个数
+			help[i + 1] += help[i];
+		
+		int[] res = new int[arr.length];
 		for(int i = 0; i < arr.length; i++) {
-			int pos = arr[i] - min;
-			help[pos]++;
+			help[arr[i]]--;
+			res[help[arr[i]]] = arr[i];
 		}
 		
-		int index = 0;
-		for(int i = 0; i < help.length ; i++) {
-			while(help[i]-- > 0)
-				arr[index++] = i  + min;
-		}	
+		System.arraycopy(res, 0, arr, 0, arr.length);
 	}
 }
