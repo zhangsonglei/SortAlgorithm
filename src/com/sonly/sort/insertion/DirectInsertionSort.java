@@ -1,14 +1,14 @@
-package com.sonly.sort;
+package com.sonly.sort.insertion;
 
 /**
  *<ul>
- *<li>Description: 插入排序，将给定数组排成从左到右依次增加的形式
+ *<li>Description: 直接插入排序，将给定数组排成从左到右依次增加的形式
  *<li>Company: HUST
  *<li>@author Sonly
  *<li>Date: 2018年3月18日
  *</ul>
  */
-public class InsertionSort {
+public class DirectInsertionSort {
 
 	/**
 	 * 将给定数组按照从小到大排序

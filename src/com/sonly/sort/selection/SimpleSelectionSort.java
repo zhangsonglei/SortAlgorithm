@@ -1,4 +1,6 @@
-package com.sonly.sort;
+package com.sonly.sort.selection;
+
+import com.sonly.sort.Utils;
 
 /**
  *<ul>
@@ -8,7 +10,7 @@ package com.sonly.sort;
  *<li>Date: 2018年3月18日
  *</ul>
  */
-public class SelectionSort {
+public class SimpleSelectionSort {
 
 	/**
 	 * 将给定数组从小到大排序
