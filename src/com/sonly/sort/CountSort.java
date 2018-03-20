@@ -15,6 +15,9 @@ public class CountSort {
 	 * @param arr
 	 */
 	public static void sort(int[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		if(1 == arr.length)
 			return;
 		

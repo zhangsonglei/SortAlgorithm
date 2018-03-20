@@ -17,6 +17,12 @@ public class HeapSort {
 	 * @param arr
 	 */
 	public static void sort(double[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
+		if(arr.length == 1)
+			return;
+		
 		buildHeap(arr, arr.length);
 		
 		for(int i = arr.length - 1; i > 0; i--) {
@@ -29,7 +35,7 @@ public class HeapSort {
 	 * 建立最大堆
 	 * @param arr	待建堆的数组
 	 */
-	public static void buildHeap(double[] arr, int len) {
+	private static void buildHeap(double[] arr, int len) {
 		for(int i = arr.length / 2; i >= 0; i--)
 			adjust(arr, i, len);
 	}

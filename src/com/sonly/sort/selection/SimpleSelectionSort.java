@@ -17,6 +17,9 @@ public class SimpleSelectionSort {
 	 * @param arr
 	 */
 	public static void sort(double[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		if(1 == arr.length)
 			return;
 	
@@ -36,7 +39,7 @@ public class SimpleSelectionSort {
 	 * @param end	数组的终点
 	 * @return		最小值的索引
 	 */
-	public static int minIndex(double[] arr, int start, int end) {
+	private static int minIndex(double[] arr, int start, int end) {
 		if(start < 0 || start > arr.length - 1 || end < 0 || end > arr.length - 1)
 			throw new IllegalArgumentException("start or end out of boundary, start = " + start + "\tend = " + end);
 		

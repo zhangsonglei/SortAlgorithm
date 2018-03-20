@@ -15,6 +15,11 @@ public class DirectInsertionSort {
 	 * @param arr	待排序数组
 	 */
 	public static void sort(double[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
+		if(arr.length == 1)
+			return;
 		
 		int j;
 		for(int i = 1; i < arr.length; i++) {

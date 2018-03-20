@@ -17,6 +17,9 @@ public class RadixSort {
 	 * @param arr	待排序数组
 	 */
 	public static void sort(int[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		if(1 == arr.length)
 			return;
 		
@@ -39,7 +42,7 @@ public class RadixSort {
 	 * @param arr	待排序数组
 	 * @param maxBit最大位数
 	 */
-	public static void radixSort(int[] arr, int maxBit) {
+	private static void radixSort(int[] arr, int maxBit) {
 		int[][] tmp = new int[10][arr.length + 1];
 		
 		for(int i = 0; i < tmp.length; i++)

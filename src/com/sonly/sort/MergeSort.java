@@ -15,6 +15,9 @@ public class MergeSort {
 	 * @param arr	待排序的数组
 	 */
 	public static void sort(double[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		if(1 == arr.length)
 			return;
 		
@@ -27,7 +30,7 @@ public class MergeSort {
 	 * @param low	排序的起点
 	 * @param high	排序的重点
 	 */
-	public static void mergeSort(double[] arr, int low, int high) {
+	private static void mergeSort(double[] arr, int low, int high) {
 		int mid = (high + low) / 2;
 		
 		if(low < high) {

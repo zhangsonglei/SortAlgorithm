@@ -17,6 +17,9 @@ public class QuickSort {
 	 * @param arr	待排序的数组
 	 */
 	public static void sort(double[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		if(1 == arr.length)
 			return;
 		
@@ -30,7 +33,7 @@ public class QuickSort {
 	 * @param end	终止位置
 	 * @return		中位数
 	 */
-	public static double mid3ToEnd(double[] arr, int start, int end) {
+	private static double mid3ToEnd(double[] arr, int start, int end) {
 		int mid_index = (end - start) / 2;
 		double l = arr[start], r = arr[end], m = arr[mid_index];
 		
@@ -50,7 +53,7 @@ public class QuickSort {
 	 * @param end	终止位置
 	 * @return		枢纽最终位置
 	 */
-	public static int partition(double[] arr, int start, int end) {
+	private static int partition(double[] arr, int start, int end) {
 		double pivot = mid3ToEnd(arr, start, end);
 		
 		while(start < end) {

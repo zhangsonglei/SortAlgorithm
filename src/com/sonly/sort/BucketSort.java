@@ -19,6 +19,9 @@ public class BucketSort {
 	 * @param num	桶的个数
 	 */
 	public static void sort(int[] arr, int num) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		if(1 == arr.length)
 			return;
 		

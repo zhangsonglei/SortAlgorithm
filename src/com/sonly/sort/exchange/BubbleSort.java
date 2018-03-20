@@ -17,6 +17,9 @@ public class BubbleSort {
 	 * @param arr	待排序的数组
 	 */
 	public static void sort(double[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		if(1 == arr.length)
 			return;
 		

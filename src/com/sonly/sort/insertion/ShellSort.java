@@ -15,6 +15,12 @@ public class ShellSort {
 	 * @param arr	待排序数组
 	 */
 	public static void sort(double[] arr) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
+		if(arr.length == 1)
+			return;
+		
 		int increment = arr.length / 2;
 		
 		while(increment > 0) {
@@ -29,6 +35,9 @@ public class ShellSort {
 	 * @param increment	增量大小
 	 */
 	public static void shellInsert(double[] arr, int increment) {
+		if(arr == null)
+			throw new IllegalArgumentException("array cannot be null");
+		
 		for(int i = increment; i < arr.length; i++) {
 			if(arr[i] < arr[i - increment]) {
 				double tmp = arr[i];
